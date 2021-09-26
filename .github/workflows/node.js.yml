@@ -15,7 +15,7 @@ jobs:
         env:
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
-          POSTGRES_DB: gist
+          POSTGRES_DB: octopus
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         ports:
           - 5432:5432
@@ -27,7 +27,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     env:
       NODE_ENV: test
-      DATABASE_URL_TEST: postgres://postgres:postgres@localhost:5432/gist
+      DATABASE_TEST: postgres://postgres:postgres@localhost:5432/octopus
       CLIENT_URL: https://www.youtube.com/watch?v=KxGRhd_iWuE
 
     steps:
