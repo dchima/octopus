@@ -62,7 +62,7 @@ const Account = {
      * since I've saved both the paystack bank name and the user's input
      * bank name, we can select which to return to the user.
      */
-    return account.account_name !== 'none' ? account.account_name : account.paystack_account_name;
+    return account.account_name === 'none' ? account.paystack_account_name : account.account_name;
   }
 };
 

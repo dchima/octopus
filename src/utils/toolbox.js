@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import Paystack from 'paystack-node';
 import env from '../config/env';
-import bankData from '../validations/bankData';
 
 const {
   PAYSTACK_SECRET, NODE_ENV
