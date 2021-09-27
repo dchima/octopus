@@ -29,6 +29,7 @@ jobs:
       NODE_ENV: test
       DATABASE_TEST: postgres://postgres:postgres@localhost:5432/octopus
       CLIENT_URL: https://www.youtube.com/watch?v=KxGRhd_iWuE
+      PAYSTACK_SECRET: ${{ secrets.PAYSTACK_SECRET }}
 
     steps:
     - uses: actions/checkout@v2
