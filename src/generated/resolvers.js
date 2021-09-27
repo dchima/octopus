@@ -2,14 +2,14 @@ import { GraphQLDate } from 'graphql-iso-date';
 import { Account } from '../controllers';
 
 const {
-  addAccount
+  addAccount, getAccount
 } = Account;
 
 const resolvers = {
 
   Date: GraphQLDate,
   Query: {
-    user: () => 'hello world'
+    getAccount,
   },
 
   Mutation: {

@@ -8,22 +8,16 @@ scalar Date
     account_name: String!
     account_number: String!
     bank_code: String!
+    paystack_account_name: String
     bank_name: String
     is_verified: Boolean
   }
 
   type Query {
-    getAccount( account_number: String! ): accounts!
-    user: String!
+    getAccount( account_number: String!, bank_code: String! ): String!
   }
 
   type Mutation {
-    verifyAccount(
-      account_name: String!,
-      account_number: String!,
-      bank_name: String!,
-    ): String!
-
     addAccount(
       account_name: String!,
       account_number: String!,
