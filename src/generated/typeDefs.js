@@ -13,22 +13,21 @@ scalar Date
   }
 
   type Query {
-    get_account( account_number: String! ): accounts!
+    getAccount( account_number: String! ): accounts!
     user: String!
   }
 
   type Mutation {
-    verify_account(
+    verifyAccount(
       account_name: String!,
       account_number: String!,
       bank_name: String!,
     ): String!
 
-    add_account(
-      email: String!,
+    addAccount(
       account_name: String!,
       account_number: String!,
-      bank_name: String!,
+      bank_code: String!,
     ): accounts!
   }
 `;

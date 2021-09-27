@@ -2,6 +2,12 @@ module.exports = (sequelize, DataTypes) => {
   const accounts = sequelize.define(
     'accounts',
     {
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+      },
       account_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -16,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       bank_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      paystack_account_name: {
         type: DataTypes.STRING,
         allowNull: false
       },
