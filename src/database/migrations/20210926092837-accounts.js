@@ -2,9 +2,9 @@ module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('accounts', {
     id: {
       allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV4,
     },
     account_name: {
       type: Sequelize.STRING,
@@ -20,6 +20,10 @@ module.exports = {
       allowNull: false,
     },
     bank_name: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    paystack_account_name: {
       type: Sequelize.STRING,
       allowNull: false
     },
