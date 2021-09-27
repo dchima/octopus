@@ -2,16 +2,14 @@
 
 
 ## Remarks
-This was a very nice little project to work on. It's bbeen a while since i integrated with the Paystack API, so working with it in a small capacity was fun. i also hadn't written graphql in a minute. forgot how sweet it was to simply write shemas that fit the data qury I need on the fly.
+This was a very nice little project to work on. It's bbeen a while since i integrated with the Paystack API, so working with it in a small capacity was fun. i also hadn't written graphql in a minute. forgot how sweet it was to simply write schemas that fit the data query I need on the fly.
 
 ### Architecture Decisions
-I decided to assume the verification occoured during every addition to the database. This way, a positive verification of one's account number and bank code from the paystack api guaranteed you a space in the database. However, this did not guaranty a verified status.
+I Assumed the verification occoured during every addition to the database. This way, a positive verification of an account number and bank code from the paystack api guaranteed you a space in the database. However, this did not guaranty a verified status.
 
-The verification status of the user in our database depended on if the user passed the Levenshtein distance of 2. The account name from paystack is always saved during the add account mutation. This way, When we perform the Query on an account that is in our database, but did not pass the Levenshtein Distance check, we do not need to perofrm another call to the paystack API.
+The verification status of the user in our database depended on if the user passed the Levenshtein distance of 2. The account name from paystack is always saved during the add account mutation. What this allows for when we perform the Query on an account that is in our database, but did not pass the Levenshtein Distance check, is that we do not need to perofrm another call to the paystack API.
 
-All accounts that pass the Levenshtein distance chech will have the name they inputed returned back to the client.
-
-
+All accounts that pass the Levenshtein distance check will have the name they inputed returned back to the client.
 
 
 
